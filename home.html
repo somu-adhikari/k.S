@@ -8,10 +8,22 @@
 </head>
 <body>
     <!-- Audio for Background Music -->
-    <audio autoplay loop>
-        <source src="music/happy_birthday_song.mp3" type="audio/mp3">
+    <audio id="myAudio" autoplay muted loop>
+        <source src="audio1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+
+       
+        window.addEventListener('click', function() {
+            audio.muted = false; 
+            audio.play().catch(function(error) {
+                console.log('Playback error:', error);
+            });
+        });
+    </script>
 
     <!-- Home Page Section with Cake Background -->
     <section id="home">
